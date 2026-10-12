@@ -1,17 +1,19 @@
-import AboutSection from "@/components/AboutSection";
 import Hero from "@/components/hero";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
 import Products from "@/components/products";
-import Image from "next/image";
+import ContactSection from "@/components/contactSection";
+
 
 export default function Home() {
   return (
     <main>
-      <Hero/>
-      <AboutSection/>
-      <Products/>
+      <Hero />
+      <AboutSection />
+      <ServicesSection />
+      <Products />
+      <ContactSection />
+      
     </main>
-  )
-   
+  );
 }
-
-

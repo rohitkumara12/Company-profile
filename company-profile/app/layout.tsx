@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Services from "@/components/products";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,39 +14,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Autotech Supply menyediakan Sparepart mobil yang berkualitas untuk perawatan dan penggantian komponen kendaraan anda.",
-   
+  title: "Auto Tech Source | Sparepart Mobil Berkualitas",
+  description:
+    "Auto Tech Source menyediakan sparepart mobil berkualitas untuk perawatan dan penggantian komponen kendaraan.",
+
   openGraph: {
-    title: "AutoTech Supply | Sparepart Mobil Berkualitas",
+    title: "Auto Tech Source | Sparepart Mobil Berkualitas",
     description:
-      "Temukan berbagai kebutuhan sparepart mobil di AutoTech Supply.",
-    url: "https://autotech-supply.com",
-    siteName: "AutoTech Supply",
+      "Temukan berbagai kebutuhan sparepart mobil berkualitas di Auto Tech Source.",
+    siteName: "Auto Tech Source",
     locale: "id_ID",
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1536,
-        height:864,
-        alt: "AutoTech.Source - Sparepart Mobil Berkualitas",
+        height: 864,
+        alt: "Auto Tech Source - Sparepart Mobil Berkualitas",
       },
     ],
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-      <Navbar/>
+        <Navbar />
         {children}
-      <Services/>
-        </body>
+      </body>
     </html>
   );
 }
